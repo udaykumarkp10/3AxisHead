@@ -11,7 +11,6 @@
 #include <project.h>
 #include "br24l64f.h"
 #include "tmc6100.h"
-#include "pcap.h"
 
 typedef struct{
 	uint32_t encoder_resolution;
