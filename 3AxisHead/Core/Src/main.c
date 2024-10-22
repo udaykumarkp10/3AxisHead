@@ -715,6 +715,7 @@ int main(void)
 				break;
 
 			case 200:
+				TxData = 0;
 				setWrongCommandFlag(&tmc4671_controller, false);
 				continuous_tx_flag = false;
 				break;
@@ -778,7 +779,6 @@ int main(void)
 			  Etc_Buffer_In.LANLong[1] = TxData;
 			  continuous_tx_flag = true;  // Mark that data has been sent
 		  }
-		  TxStatus = getEventStatusWord_TMC(&tmc4671_controller);
 		  Etc_Buffer_In.LANLong[0] = ((uint32_t)TxStatus << 16) | (uint32_t)etc_new_command;
 	  }
 
