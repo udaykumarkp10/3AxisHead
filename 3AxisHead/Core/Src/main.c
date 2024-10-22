@@ -786,7 +786,7 @@ int main(void)
 		  get_sent_count++;
 		  Etc_Buffer_In.LANLong[0] = ((uint32_t) TxStatus << 16) | (uint32_t) etc_new_command;
 		  Etc_Buffer_In.LANInt[1] = TxData;
-	  } else {
+	  } else if (get_command_flag && etc_new_command == 200 ) {
 		  Etc_Buffer_In.LANLong[0] = ((uint32_t) TxStatus << 16) | (uint32_t) etc_new_command;
 		  Etc_Buffer_In.LANInt[1] = TxStatus;
 	  }
